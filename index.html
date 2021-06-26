@@ -3,6 +3,7 @@
     <head>
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
     </head>
@@ -11,13 +12,20 @@
         <a-scene
             vr-mode-ui="enabled: false;"
             loading-screen="enabled: false;"
+            renderer="logarithmicDepthBuffer: true;"
             arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
             id="scene"
             embedded
             gesture-detector
         >
+            <a-assets>
+                <a-asset-item
+                    id="asset"
+                ></a-asset-item>
+            </a-assets>
+
             <a-marker
-                id="animated-marker"
+                id="marker"
                 type="pattern"
                 preset="custom"
                 url="assets/marker.patt"
@@ -27,6 +35,10 @@
             >
                 <a-entity
                     id="asset-entity"
+                    scale="1 1 1"
+                    gltf-model="#asset"
+                    class="clickable"
+                    gesture-handler
                 >
                 </a-entity>
             </a-marker>
@@ -36,9 +48,9 @@
         <script>
             const assetNumber = new URLSearchParams(window.location.search).get("a");
             if (assetNumber) {
-                const objModelValue = `obj: url(assets/${assetNumber}/${assetNumber}.obj); mtl: url(assets/${assetNumber}/${assetNumber}.mtl)`;
-                console.log("obj-model:", objModelValue);
-                document.querySelector("#asset-entity").setAttribute("obj-model", objModelValue);
+                const objModelValue = `assets/${assetNumber}.glb`;
+                console.log("src:", objModelValue);
+                document.querySelector("#asset").setAttribute("src", objModelValue);
             }
         </script>
     </body>
