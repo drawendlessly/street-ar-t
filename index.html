@@ -6,9 +6,26 @@
         <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+        <script src="js/url-asset-manager.js"></script>
+        <link rel="stylesheet" href="css/main.css">
     </head>
 
-    <body style="margin: 0; overflow: hidden;">
+    <body>
+        <div id="loading-model-message">
+            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            <div>loading your scene...</div>
+        </div>
+        <div id="error-model-loading-message" class="invisible">
+            <div class="lds-hourglass"></div>
+            <div>sorry, your scene can't be loaded,<br />you can close this webpage and try to rescan the QrCode</div>
+        </div>
+        <div id="marker-lost-message" class="invisible">
+            <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div>sorry, can't find the marker to render the scene,<br />please point your camera to the QrCode</div>
+        </div>
+        <div id="title">
+            Your site title can go here ! Use css to style it,<br />just keep the position absolute with top: 0 and left: 0
+        </div>
         <a-scene
             vr-mode-ui="enabled: false;"
             loading-screen="enabled: false;"
@@ -17,13 +34,8 @@
             id="scene"
             embedded
             gesture-detector
+            url-asset-manager
         >
-            <a-assets>
-                <a-asset-item
-                    id="asset"
-                ></a-asset-item>
-            </a-assets>
-
             <a-marker
                 id="marker"
                 type="pattern"
@@ -35,23 +47,13 @@
             >
                 <a-entity
                     id="asset-entity"
-                    scale="1 1 1"
-                    gltf-model="#asset"
+                    scale="0.3 0.3 0.3"
                     class="clickable"
                     gesture-handler
                 >
                 </a-entity>
             </a-marker>
-
             <a-entity camera></a-entity>
         </a-scene>
-        <script>
-            const assetNumber = new URLSearchParams(window.location.search).get("a");
-            if (assetNumber) {
-                const objModelValue = `assets/${assetNumber}.glb`;
-                console.log("src:", objModelValue);
-                document.querySelector("#asset").setAttribute("src", objModelValue);
-            }
-        </script>
     </body>
 </html>
