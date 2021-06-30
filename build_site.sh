@@ -9,3 +9,5 @@ cp -r ./assets ./public-site;
 cp -r ./css ./public-site;
 
 cp -r ./js ./public-site;
+
+echo 'street-ar-t.nihilux.org' > ./public-site/CNAME

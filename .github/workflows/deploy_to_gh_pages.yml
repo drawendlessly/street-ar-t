@@ -15,4 +15,3 @@ jobs:
           access-token: ${{ secrets.ACCESS_TOKEN }}
           source-directory: public-site
           build-command: sh ./build_site.sh
-          custom-domain: street-ar-t.nihilux.org
