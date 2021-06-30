@@ -69,6 +69,8 @@ const urlAssetManager = {
 
         const marker = this.el.sceneEl.querySelector(`#${this.data.markerId}`);
 
+        const markerMessage = document.querySelector(`#${this.data.markerLostId}`);
+
         marker.addEventListener("markerFound", () => {
             markerMessage.classList.add(this.data.invisibleClassName);
         });
@@ -77,17 +79,15 @@ const urlAssetManager = {
             markerMessage.classList.remove(this.data.invisibleClassName);
         });
 
-        const markerMessage = document.querySelector(`#${this.data.markerLostId}`);
-
         const entity = this.el.sceneEl.querySelector(`#${this.data.entityId}`);
 
-        const loadingId = `#${this.data.loadingId}`;
+        const loadingMessage = document.querySelector(`#${this.data.loadingId}`);
 
-        const errorId = `#${this.data.errorId}`;
+        const errorMessage = document.querySelector(`#${this.data.errorId}`);
 
         entity.addEventListener("model-loaded", () => {
             
-            document.querySelector(loadingId).classList.toggle(this.data.invisibleClassName);
+            loadingMessage.classList.toggle(this.data.invisibleClassName);
 
             if (!marker.object3D.visible) {
                 markerMessage.classList.remove(this.data.invisibleClassName);
@@ -97,9 +97,9 @@ const urlAssetManager = {
 
         entity.addEventListener("model-error", () => {
             
-            document.querySelector(loadingId).classList.toggle(this.data.invisibleClassName);
+            loadingMessage.classList.toggle(this.data.invisibleClassName);
             
-            document.querySelector(errorId).classList.toggle(this.data.invisibleClassName);
+            errorMessage.classList.toggle(this.data.invisibleClassName);
 
             markerMessage.classList.add(this.data.invisibleClassName);
 
