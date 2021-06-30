@@ -4,7 +4,7 @@
 
 Scan the following QrCode with a compatible device and you should see [this bowser model](https://sketchfab.com/3d-models/bowser-fa17f94ae350416f86c35db7c0e129c3).
 
-![Qr Code for demo](https://github.com/nihilux-org/street-ar-t/raw/main/docs/img/qr-street-ar-t-000.png "Qr Code for the demo")
+![Qr Code for demo](https://github.com/nihilux-org/street-ar-t/raw/main/docs/img/qr-street-ar-t-demo.png "Qr Code for the demo")
 
 ## A simple idea
 
