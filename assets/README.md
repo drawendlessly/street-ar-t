@@ -10,12 +10,16 @@ There is a dedicated documentation about creating your own marker.
 
 In this repo, one of the *default* AR marker is used: [the one available through AR.js studio](https://ar-js-org.github.io/studio/assets/default-marker.png) and simplu displaying AR in dedicated box.
 
-## About the `000.glb` model in this repo:
+## About the `demo.glb` model in this repo:
 
-Fot the demo purpose, a `glb` version of a model available on the web through [CC By 4.0](https://creativecommons.org/licenses/by/4.0/) is used: the [`000.glb`](./000.glb) file.
+Fot the demo purpose, a `glb` version of a model available on the web through [CC By 4.0](https://creativecommons.org/licenses/by/4.0/) is used: the [`demo.glb`](./demo.glb) file.
 
 This model has been originaly produced by [santiago3052008](https://sketchfab.com/santiago3052008) and is available [here](https://sketchfab.com/3d-models/bowser-fa17f94ae350416f86c35db7c0e129c3).
 
 It has just been converted to a self-contained `.glb`. 
 
 This `.glb` version of this model is therefore available through [CC By 4.0](https://creativecommons.org/licenses/by/4.0/) and all credit must go to its original author: [santiago3052008](https://sketchfab.com/santiago3052008).
+
+## How to host your models
+
+Simple add a `.glb` file in the `assets` folder, generate a QrCode pointing to `https://your.domain.name?a=your_model_file_name_without_extension` and you're done !

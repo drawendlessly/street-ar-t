@@ -60,6 +60,6 @@ So you can focus on creating your models, creating your stencils (or stickers, o
 
 [loading.io](https://loading.io) because they offer free spinner based on modern CSS technologies. Every spinner on this project come from their [CSS spinner gallery](https://loading.io/css/).
 
-[santiago3052008](https://sketchfab.com/santiago3052008) for the [bowser model](https://sketchfab.com/3d-models/bowser-fa17f94ae350416f86c35db7c0e129c3) used as an exemple in this repo.
+[santiago3052008](https://sketchfab.com/santiago3052008) for the [bowser model](https://sketchfab.com/3d-models/bowser-fa17f94ae350416f86c35db7c0e129c3) used as an exemple in this [repo](./assets).
 
 [Waxhead](https://www.instagram.com/waxheadart) for the original idea.
