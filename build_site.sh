@@ -1,13 +1,13 @@
 #!/bin/bash
 
-mkdir ./public-site;
+mkdir ./public;
 
-cp ./index.html ./public-site;
+cp ./index.html ./public;
 
-cp -r ./assets ./public-site;
+cp -r ./assets ./public;
 
-cp -r ./css ./public-site;
+cp -r ./css ./public;
 
-cp -r ./js ./public-site;
+cp -r ./js ./public;
 
-echo 'street-ar-t.nihilux.org' > ./public-site/CNAME
+echo 'street-ar-t.nihilux.org' > ./public/CNAME
